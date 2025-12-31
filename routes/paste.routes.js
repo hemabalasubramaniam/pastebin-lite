@@ -6,7 +6,7 @@ const pasteController = require("../controllers/paste.controller");
 router.get("/health", pasteController.health);
 
 router.post("/paste", pasteController.createPaste);
-router.get("/paste/:id", pasteController.fetchPaste);
+router.get("/pastes/:id", pasteController.fetchPaste);
 router.get("/p/:id", pasteController.viewPaste);
 
 module.exports = router;
