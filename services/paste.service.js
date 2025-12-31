@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require("uuid");
+const { randomUUID } = require("crypto");
 const { getNow } = require("../utils/time");
 
 const pastes = {};
@@ -25,7 +25,7 @@ const validatePaste = (paste, id, now) => {
 exports.create = ({ content, ttl_seconds, max_views }) => {
   if (!content) throw new Error("Content is required");
 
-  const id = uuidv4().slice(0, 8);
+  const id = randomUUID().slice(0, 8);
 
   const paste = {
     id,
