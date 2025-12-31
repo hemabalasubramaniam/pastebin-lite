@@ -2,7 +2,6 @@ exports.getNow = (req) => {
   if (!req || !req.headers) {
     return Date.now();
   }
-
   const isTestMode = process.env.TEST_MODE === 1;
 
   if (isTestMode) {
