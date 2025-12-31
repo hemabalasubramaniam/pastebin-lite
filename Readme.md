@@ -61,6 +61,8 @@ Create a `.env` file (optional):
 ```
 TEST_MODE=false
 PORT=3000
+APP_URL=http://localhost:3000
+
 ```
 
 ### Run
@@ -89,7 +91,7 @@ Base path: `/api`
 {
   "content": "Your text content here",
   "expiresIn": 3600,   // optional — seconds until expiry
-  "maxViews": 10       // optional — maximum views
+  "max_views": 10       // optional — maximum views
 }
 ```
 
@@ -108,7 +110,7 @@ Success response:
   "id": "550e8400-e29b-41d4-a716-446655440000",
   "url": "/api/pastes/550e8400-e29b-41d4-a716-446655440000",
   "expiresAt": "2025-12-31T12:00:00.000Z",
-  "maxViews": 5
+  "max_views": 5
 }
 ```
 
@@ -157,7 +159,7 @@ Response:
 ## Expiration Rules
 
 - `expiresIn` — time-to-live in seconds. When set, the paste expires after that many seconds.
-- `maxViews` — a paste with `maxViews` decrements its remaining views on each GET; when it reaches zero the paste is removed.
+- `max_views` — a paste with `max_views` decrements its remaining views on each GET; when it reaches zero the paste is removed.
 - If both are provided the paste expires when either condition is met.
 - `TEST_MODE=true` scales time-based expirations down (for example, to 10% of the provided duration) with a minimum of 10 seconds to make testing quicker.
 
