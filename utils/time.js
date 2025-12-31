@@ -1,15 +1,8 @@
 exports.getNow = (req) => {
-  if (!req || !req.headers) {
-    return Date.now();
+  if (process.env.TEST_MODE === "1") {
+    const header = req?.headers?.["x-test-now-ms"];
+    if (header && !isNaN(header)) return Number(header);
   }
-  const isTestMode = process.env.TEST_MODE === 1;
-
-  if (isTestMode) {
-    const headerTime = req.headers["x-test-now-ms"];
-    if (headerTime && !isNaN(headerTime)) {
-      return Number(headerTime);
-    }
-  }
-
   return Date.now();
 };
+
