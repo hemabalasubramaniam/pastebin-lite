@@ -12,7 +12,7 @@ exports.createPaste = (req, res) => {
 
     res.status(200).json({
       id: paste.id,
-      url: `${APP_URL}/paste/${paste.id}/view`,
+      url: `${APP_URL}/p/${paste.id}`,
     });
   } catch (err) {
     res.status(400).json({ error: err.message });
