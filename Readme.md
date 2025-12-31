@@ -59,7 +59,7 @@ npm install
 Create a `.env` file (optional):
 
 ```
-TEST_MODE=false
+TEST_MODE=1
 PORT=3000
 APP_URL=http://localhost:3000
 

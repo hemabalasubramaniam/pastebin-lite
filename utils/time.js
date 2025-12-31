@@ -1,5 +1,5 @@
 exports.getNow = (req) => {
-  if (process.env.TEST_MODE === "1") {
+  if (process.env.TEST_MODE === 1) {
     const header = req?.headers?.["x-test-now-ms"];
     if (header && !isNaN(header)) return Number(header);
   }
