@@ -1,4 +1,5 @@
 const pasteService = require("../services/paste.service");
+const PORT = process.env.PORT || 3000;
 const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
 
 exports.health = (req, res) => {
